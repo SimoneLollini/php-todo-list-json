@@ -27,7 +27,23 @@ const {
 createApp({
     data() {
         return {
-            message: 'Hello Vue!'
+            tasksList: [],
+            API_URL_server: 'server.php',
         }
+    },
+    methods: {
+        readTasks(url) {
+            axios
+                .get(url)
+                .then(response => {
+                    console.log(response);
+                    this.tasksList = response.data
+                })
+                .catch(err => {
+                    console.error(err.message);
+                })
+        }
+    }, mounted() {
+        this.readTasks(this.API_URL_server);
     }
 }).mount('#app')

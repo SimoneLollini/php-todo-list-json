@@ -12,14 +12,20 @@
 
 <body>
     <div id="app">
-        <div class="container bg-dark text-white rounded-4 p-5 mt-5">
-            <form action="index.php" method="get">
+
+        <div class="container bg-primary text-white rounded-4 p-5 mt-5">
+            <ul>
+                <li v-for="task in tasksList">{{task}}</li>
+            </ul>
+
+            <!-- <form action="index.php" method="get">
                 <input type="text" name="addTask" id="">
                 <button type="submit" class="btn btn-sm btn-light">Invia</button>
-            </form>
+            </form> -->
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="./assets/js/app.js"></script>
 
