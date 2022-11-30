@@ -12,8 +12,11 @@
 
 <body>
     <div id="app">
-        <div class="container bg-dark text-white rounded-4">
-            ciao
+        <div class="container bg-dark text-white rounded-4 p-5 mt-5">
+            <form action="index.php" method="get">
+                <input type="text" name="addTask" id="">
+                <button type="submit" class="btn btn-sm btn-light">Invia</button>
+            </form>
         </div>
     </div>
 </body>
