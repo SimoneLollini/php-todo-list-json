@@ -41,9 +41,9 @@ createApp({
                 .post(this.API_URL_add, data, {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 })
-                .then(resp => {
-                    // console.log(resp);
-                    this.tasksList = resp.data
+                .then(response => {
+                    // console.log(response);
+                    this.tasksList = response.data
                     this.newTask = '';
                 })
                 .catch(err => {
