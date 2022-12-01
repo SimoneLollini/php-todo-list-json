@@ -11,22 +11,26 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class=" bg-dark vh-100">
+        <div class="container d-flex justify-content-center align-items-center h-100">
+            <div class="col-4 bg-light rounded-4 p-5">
+                <ul>
+                    <li class="list-group-item fs-4 to-uppercase" v-for="task in tasksList">{{task}}</li>
+                </ul>
 
-        <div class="container bg-primary text-white rounded-4 p-5 mt-5">
-            <ul>
-                <li v-for="task in tasksList">{{task}}</li>
-            </ul>
+                <div class="mb-3 d-flex mt-2">
+                    <input type="text" name="task" id="task" class="form-control rounded-0" placeholder="Add a new task" aria-describedby="taskHelper" v-model='newTask' @keyup.enter="addTask">
+                    <button type="submit" class="btn btn-primary rounded-0" @click="addTask">
+                        Submit
+                    </button>
+                </div>
 
-            <!-- <form action="index.php" method="get">
-                <input type="text" name="addTask" id="">
-                <button type="submit" class="btn btn-sm btn-light">Invia</button>
-            </form> -->
+            </div>
         </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="./assets/js/app.js"></script>
+<script src="./app.js"></script>
 
 </html>
